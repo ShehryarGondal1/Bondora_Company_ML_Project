@@ -11,7 +11,7 @@ __Business Problems we are trying to Solve__
 •	We also making conclusion what are the factors affecting the borrower not to repay the loans on time.
 
 __Main Goal__
-This case study aims to identify patterns which indicate if a client has difficulty paying their installments which may be used for taking actions such as denying the loan, reducing the amount of loan, lending (to risky applicants) at a higher interest rate, etc. This will ensure that the consumers capable of repaying the loan are not rejected. In other words, the company wants to understand the driving factors (or driver variables) behind loan defaulters, i.e. the variables which are strong indicators of default. The company can utilise this knowledge for its portfolio and risk assessment.
+This case study aims to identify patterns which indicate if a client has difficulty paying their installments which may be used for taking actions such as denying the loan, reducing the amount of loan, lending (to risky applicants) at a higher interest rate, etc. This will ensure that the consumers capable of repaying the loan are not rejected. In other words, the company wants to understand the driving factors (or driver variables) behind loan defaulters, i.e. the variables which are strong indicators of default. The company can utilise this knowledge for its portfolio and risk assessment and also help Lender to grant the loan on the basic of EMI ,ROI,ELA.
 
 
 __About Dataset__
@@ -23,7 +23,7 @@ This is what the dataset looks like : <br>
 <br>
 
 It has lots of rows and columns, which is 134529 rows spread across 112 columns. Here is the list of columns this dataset has : <br>
-![image](Columns.PNG)
+![image](Images/Columns.PNG)
 <br>
 
 # Data Cleaning & Pre-processing
@@ -33,11 +33,11 @@ The approach used for identifying and treating missing values & outlier treatmen
 <br>
 
 __Changing Datatypes__<br>
-![image](changing_datatypes.PNG)
+![image](Images/changing_datatypes.PNG)
 <br>
 
 __Descriptive Analysis of data__<br>
-![image](desp_data.PNG)
+![image](Images/desp_data.PNG)
 <br>
 To find any missing values in our data set we have used Pandas pre built function __isnull()__ to detect any missing values in our datasets. As we can see that column ReScheluledon has a high number of missing values. So our next step is how to handle a large number of missing values. One approach is, that we will delete the column if we don't need that column for further analysis. And, what if we need that column for further analysis then we have use an approach will is a predefined function in Pandas called fillna().
 
@@ -45,16 +45,17 @@ The Whole missing percent of data in our data is:<br>
 ![image](mis_data.PNG)
 <br>
 
-![image](mis_data2.PNG)
+![image](Images/mis_data2.PNG)
 <br>
 Removing all the features which have more than 40% missing values:<br>
-# Number of these columns
+# Number of these columns <br>
+
 len(df.columns[(df.isnull().mean()*100) >= 40])<br>
 # Now we can remove columns having more than 40% missing values
 df.drop(columns= DropColList, axis= 1, inplace=True)
 <br>
 
-![image](mis_data3.PNG)
+![image](Images/mis_data3.PNG)
 <br>
 
 __Creating Target variable :__
@@ -62,11 +63,11 @@ __Creating Target variable :__
 Here, status is the variable which help us in creating target variable. The reason for not making status as target variable is that it has three unique values current, Late and repaid. There is no default feature but there is a feature default date which tells us when the borrower has defaulted means on which date the borrower defaulted. So, we will be combining Status and Default date features for creating target variable.The reason we cannot simply treat Late as default because it also has some records in which actual status is Late but the user has never defaulted i.e., default date is null. So we will first filter out all the current status records because they are not matured yet they are current loans.
 Now, we will create new target variable in which 0 will be assigned when default date is null means borrower has never defaulted while 1 in case default date is present.<br>
 
-![image](target_feature.PNG)
+![image](Images/target_feature.PNG)
 <br>
 After making Target variable. Checking data types of all columns:<br>
 
-![image](D-types.PNG)
+![image](Images/D-types.PNG)
 <br>
 As we can see in numeric column distribution there are many columns which are present as numeric but they are actually categorical as per data description such as Verification Type, Language Code, Gender, Use of Loan, Education, Marital Status,EmployementStatus, OccupationArea etc.
 So we will convert these features to categorical feature (Refer to Notebook).
@@ -76,10 +77,10 @@ __Outlier Treatment :__
 While performing Preprocessing and Data cleaning we have to also deal with outliers. Dealing with outliers is also a necessary step to be taken for further analysis and model building. Outliers are data points in a data set that is distant from all other observations. A data point that lies outside the overall distribution of the dataset
 <br>
 
-![image](Outlier_treatment.PNG)
+![image](Images/Outlier_treatment.PNG)
 <br>
 
-![image](Outlier_treatment2.PNG)
+![image](Images/Outlier_treatment2.PNG)
 <br>
 Variable transformation is a way to make the data work better in your model. Here specifically we have Replaced the unwanted symbol and nan value with NumPy nan values i.e np. nan which we are going to deal in missing value. And we have also converted the data types of few columns which will help build our model. The need for this is because we need our model to have a good score and accuracy which will make good predictions. So to feed the data to our model we must ensure to take these steps and make our data insightful.
 
@@ -90,27 +91,27 @@ EDA stands for exploratory data analysis where we explore our data and grab insi
 __Categorical Analysis__
 <br>
 
-![image](Categorical_col.PNG)
+![image](Images/Categorical_col.PNG)
 <br>
 
 __Univariate Analysis of each column__ <br>
-![image](EDA1.PNG)<br>
-![image](EDA2.PNG)<br>
-![image](EDA3.PNG)<br>
-![image](EDA4.PNG)<br>
-![image](EDA5.PNG)<br>
-![image](EDA6.PNG)<br>
+![image](Images/EDA1.PNG)<br>
+![image](Images/EDA2.PNG)<br>
+![image](Images/EDA3.PNG)<br>
+![image](Images/EDA4.PNG)<br>
+![image](Images/EDA5.PNG)<br>
+![image](Images/EDA6.PNG)<br>
 
 __Numerical Analysis__
 <br>
 
-![image](Numerical_col.PNG)
+![image](Images/Numerical_col.PNG)
 <br>
 
 __Univariate Analysis of each column__ <br>
-![image](EDA7.PNG)<br>
-![image](EDA8.PNG)<br>
-![image](EDA9.PNG)<br>
+![image](Images/EDA7.PNG)<br>
+![image](Images/EDA8.PNG)<br>
+![image](Images/EDA9.PNG)<br>
 
 # Feature Encoding & Feature Selection & Feature Scaling & Modeling Building
 
@@ -150,17 +151,17 @@ PCA steps:
 1. __Classification Model Building :__
 
 * Feature Encoding:<br>
-![image](FE_C.PNG)<br>
+![image](Images/FE_C.PNG)<br>
 
 * Feature Selection: <br>
-![image](FS_C.PNG)<br>
+![image](Images/FS_C.PNG)<br>
 
 * Feature Scaling: <br>
-![image](FSS_C.PNG)<br>
+![image](Images/FSS_C.PNG)<br>
 
 * PCA : <br>
-![image](PCA!.PNG)<br>
-![image](PCA2.PNG)<br>
+![image](Images/PCA!.PNG)<br>
+![image](Images/PCA2.PNG)<br>
 
 * __Model Selection and Why?__
 After cleaning and processing the data then comes the modeling part which includes building Machine Learning models, let’s first understand in brief what Machine Learning is?
@@ -175,8 +176,8 @@ Then the data needs to be split into 2 sets
 ![image](t_test.PNG)<br>
 
 We implement two models on Classification and thier names are logistics Regression and Random Forest Classification models and their result are as follow: <br>
-![image](LG.PNG)<br>
-![image](RG.PNG)<br>
+![image](Images/LG.PNG)<br>
+![image](Images/RG.PNG)<br>
 
 __Building Models Conclusion:__
 By using the two models with the same features, we discovered that the Random Forest Classifier model gives accuracy better than the Logistic Regression model.<br>
@@ -184,26 +185,50 @@ By using the two models with the same features, we discovered that the Random Fo
 2. __Regression Model Building :__
 
 Before begining on feature Encoding part , we have create three new variables for target variables. <br>
-![image](Tar2.PNG)<br>
-![image](EMI.PNG)<br>
-![image](Tar3.PNG)<br>
-![image](ELA.PNG)<br>
-![image](Tar4.PNG)<br>
-![image](ROI.PNG)<br>
+![image](Images/Tar2.PNG)<br>
+![image](Images/EMI.PNG)<br>
+![image](Images/Tar3.PNG)<br>
+![image](Images/ELA.PNG)<br>
+![image](Images/Tar4.PNG)<br>
+![image](Images/ROI.PNG)<br>
 
-For Feature Encoding : we select these features : ['AppliedAmount', 'Amount', 'Interest', 'MonthlyPayment', 'IncomeTotal','Country','CreditScoreEsMicroL',
-                                                   'InterestAndPenaltyBalance','PrincipalBalance', 'DebtToIncome', 'ExistingLiabilities', 
-                                                   'Rating','LanguageCode','PrincipalBalance'] <br>
+For Feature Encoding : we select these features : 
+<table>
+  <tr>
+    <td>AppliedAmount</td>
+    <td>Amount</td>
+    <td>Interest</td>
+    <td>MonthlyPayment</td>
+  </tr>
+  <tr>
+    <td>IncomeTotal</td>
+    <td>Country</td>
+    <td>CreditScoreEsMicroL</td>
+    <td>InterestAndPenaltyBalance</td>
+  </tr>
+  <tr>
+    <td>PrincipalBalance</td>
+    <td>DebtToIncome</td>
+    <td>ExistingLiabilities</td>
+    <td>Rating</td>
+  </tr>
+   <tr>
+    <td>LanguageCode</td>
+    <td>PrincipalBalance</td>
+  </tr>
+
+</table>
+
 
 * Feature Encoding:<br>
-![image](FE_R.PNG)<br>
+![image](Images/FE_R.PNG)<br>
 
 * Feature Scaling: <br>
-![image](FS_R.PNG)<br>
+![image](Images/FS_R.PNG)<br>
 
 * PCA : <br>
-![image](PCA!.PNG)<br>
-![image](PCA2.PNG)<br>
+![image](Images/PCA!.PNG)<br>
+![image](Images/PCA2.PNG)<br>
 
 * __Model Selection and Why?__
 After cleaning and processing the data then comes the modeling part which includes building Machine Learning models, let’s first understand in brief what Machine Learning is?
@@ -215,11 +240,11 @@ First, we need to separate the dataset into two parts: features (property attrib
 Then the data needs to be split into 2 sets 
 1.	Training set - This will be the part of the dataset which the model will be using to train itself, the size should be at least 60-70% of the total data we’ve.
 2.	Testing set - To evaluate how the model is performing on the unseen data on which the model will be doing future predictions on, test set is used. It helps to understand how much error is there between actual and predicted values.<br>
-![image](T-test.PNG)<br>
+![image](Images/T-test.PNG)<br>
 
 We implement two models on Regression problem and thier names are Linear Regression and Ridge Regression models and their result are as follow: <br>
-![image](Linear.PNG)<br>
-![image](Ridge.PNG)<br>
+![image](Images/Linear.PNG)<br>
+![image](Images/Ridge.PNG)<br>
 
 __Building Models Conclusion:__
 By comparing the three models using the same features, we discovered that the two models give almost the same accuracy .
@@ -230,37 +255,47 @@ ML pipeline is a means of automating the machine learning workflow by enabling d
 
 For piplining of both Classification and Regression model . I build __Bondora_Updated.csv__ file in which I include 34 features : 30 input features and 4 output that which model is going to predict
 
-The name of input_ variables are :
-1. Bids portfolio Manager
-2. Bids Api
-3. Bids Manual
-4. New Credit Customer
-5. Age
-6. Applied Amount
-7. Interest
-8. Monthly Payment
-9. Income Total
-10. Existing Liabilities
-11. Refinance Liabilities
-12. Debt To Income
-13. Free Cash
-14. Restructured
-15. Principle Payment Made
-16. Interest And Penalty Payments Made
-17. Previous Early Repayments Before Loan.
-18. Verification Type
-19. Language Code
-20. Gender
-21. Country
-22. Use Of Loan
-23. Education
-24. Marital Status
-25. Employment Status
-26. Employment Duration Current Employere
-27. Occurpation Area
-28. Home Ownership Type
-29. Rating
-30. Credit Score Es MicroL
+The name of input_ variables are : <br>
+
+<table>
+  <tr>
+    <td>Bids portfolio Manager</td>
+    <td>Bids Api</td>
+    <td>Bids Manual</td>
+    <td>New Credit Customer</td>
+    <td>Age</td>
+    <td>Applied Amount</td>
+    <td>Interest</td>
+    <td>Monthly Payment</td>
+    <td>Income Total</td>
+    <td>Existing Liabilities</td>
+   </tr>
+  <tr>
+    <td>Refinance Liabilities</td>
+    <td>Debt To Income</td>
+    <td>Free Cash</td>
+    <td> Restructured </td>
+    <td>Principle Payment Made</td>
+    <td>Interest And Penalty Payments Made</td>
+    <td>Previous Early Repayments Before Loan</td>
+    <td>Verification Type</td>
+    <td>Language Code</td>
+    <td>Gender</td>
+  </tr>
+  <tr>
+   <td>Country</td>
+    <td>Use Of Loan</td>
+    <td>Education</td>
+    <td>Martial Status</td>
+    <td>Employement Status</td>
+    <td>Employment Duration Current Employere</td>
+    <td>Occupation Area</td>
+    <td>Homeownership Type</td>
+    <td>Rating</td>
+    <td>Credit Score Es MicroL</td>
+  </tr>
+
+</table>
 
 The name of Output variables are :
 1. Loan Status.
@@ -272,10 +307,28 @@ To see the Piplining work ( Refer to notebook). The Final prediction for classif
 __0.87%__  .
 
 The User interface of deployment app is : <br>
-![image](deploy.PNG)<br>
+![image](Images/deploy.PNG)<br>
 
 ## Deployment
 you can access our app by following this link [stock-price-application-streamlit](https://stock-price-2.herokuapp.com/) or by click [stock-price-application-flask](https://stock-price-flask.herokuapp.com/)
+
+<br>
+You can see my notebook. All  the work is explained in detail.
+
+### AUTHOR
+<hr>
+<strong>Shehryar Gondal</strong>
+
+
+You can get in touch with me on my LinkedIn Profile:<br>
+ <a href = "https://linkedin.com/in/shehryar-gondal-data-analyst"><img src="https://img.icons8.com/fluent/48/000000/linkedin.png"/></a>
+
+You can also follow my GitHub Profile to stay updated about my latest projects:<br>
+<a href = "https://github.com/ShehryarGondal1"><img src="https://img.icons8.com/fluent/48/000000/github.png"/></a>
+
+
+If you liked the repo then kindly support it by giving it a star ⭐.
+
 
 
 
