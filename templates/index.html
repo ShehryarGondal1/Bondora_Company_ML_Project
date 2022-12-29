@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan App Predictor</title>
+
+    <!--Manual Linking-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+.register{
+background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+margin-top: 2%;
+padding: 2%;
+
+width: fit-content;
+height: fit-content;
+}
+.register-left{
+text-align: center;
+color: #fff;
+margin-top: 4%;
+}
+.register-left input{
+border: none;
+border-radius: 1.5rem;
+padding: 43%;
+width: 80%;
+background: #f8f9fa;
+font-weight: bold;
+color: #f8f9fa;
+margin-top: 50%;
+margin-bottom: 3%;
+cursor: pointer;
+}
+.register-right{
+background: #ffffff;
+border-top-left-radius: 10% 50%;
+border-bottom-left-radius: 10% 50%;
+width: 200%;
+height: fit-content;
+
+
+}
+.register-left img{
+margin-top: 25%;
+margin-bottom: 5%;
+width: 55%;
+-webkit-animation: mover 2s infinite  alternate;
+animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+0% { transform: translateY(0); }
+100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+0% { transform: translateY(0); }
+100% { transform: translateY(-20px); }
+}
+.register-left p{
+font-weight: lighter;
+padding: 12%;
+margin-top: -9%;
+}
+.register .register-form{
+padding: 10%;
+width: fit-content;
+
+}
+.btnRegister{
+float: right;
+margin-top: 10%;
+border: none;
+border-radius: 1.5rem;
+padding: 2%;
+background: #0062cc;
+color: #fff;
+font-weight: 600;
+width: 50%;
+cursor: pointer;
+}
+.register .nav-tabs{
+margin-top: 3%;
+border: none;
+background: #0062cc;
+border-radius: 1.5rem;
+width: 28%;
+float: right;
+}
+.register .nav-tabs .nav-link{
+padding: 2%;
+height: 34px;
+font-weight: 600;
+color: #fff;
+border-top-right-radius: 1.5rem;
+border-bottom-right-radius: 1.5rem;
+}
+.register .nav-tabs .nav-link:hover{
+border: none;
+}
+.register .nav-tabs .nav-link.active{
+width: 100px;
+color: #0062cc;
+border: 2px solid #0062cc;
+border-top-left-radius: 1.5rem;
+border-bottom-left-radius: 1.5rem;
+}
+.register-heading{
+text-align: center;
+margin-top: 8%;
+margin-bottom: -15%;
+color: #1d5b99;
+}
+
+</style>
+
+</head>
+<body style="background-image: linear-gradient(blue, #3931af, #00c6ff);">
+    <div class="container register" >
+        <div class="row">
+            <div class="col-md-3 register-left" style="margin-top: 38%;">
+            
+                <h3>Welcome to</h3>
+                <h3>Loan Predictor App</h3> 
+                <p>This app predicts Whether Lender is going to give loan or not based on EMI , ROI , ELA and Whether borrower going to default or not</p>
+            </div>
+
+            <div class="col-md-9 register-right">
+                
+             <form action="/predict" method="post">   
+                <div>
+
+                        <div class="row register-form">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="link1"><b>BidsPortfolioManager</b></label> <br>
+                                    <input type="text" class="form-control" placeholder="Enter value in box"  id="link1" name="link1" size="20" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="edu1"><b>Language Code</b></label><br>
+                                    <select class="form-control" id="edu1" name="edu1" required >
+                                            <option class="hidden"  selected disabled>Select Option</option>
+                                                <option value="1">Estonian</option>
+                                                <option value="0">English</option>
+                                                <option value="5">Russian </option>
+                                                <option value="2">Finnish</option>
+                                                <option value="3">German</option>
+                                                <option value="7">spanish</option>
+                                                <option value="6">Sokovian</option>
+                                                <option value="4">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="edu2"><b>Country</b></label><br>
+                                    <select class="form-control" id="edu2" name="edu2" required >
+                                    <option class="hidden"  selected disabled>Select Option</option>
+                                    <option value="0">EE</option>
+                                    <option value="2">FF</option>
+                                    <option value="1">ES</option>
+                                    <option value="3">SK</option>
+                                
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="link2"><b>FreeCash</b></label> <br>
+                                  <input type="text" class="form-control" placeholder="Enter value in box" id="link2" name="link2"  size="20" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="link3"><b>BidsManual</b></label> <br>
+                                  <input type="text" class="form-control" placeholder="Enter value in box" id="link3" name="link3"  size="20" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="link4"><b>AppliedAmount</b></label> <br>
+                                    <input type="text" class="form-control" placeholder="Enter value in box"  id="link4" name="link4" size="20" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="edu4"><b>Employeement Status</b></label><br>
+                                        <select  class="form-control" id="edu4" name="edu4" required >
+                                        <option class="hidden"  selected disabled>Select Option</option>
+                                        <option value="2">Not present</option>
+                                        <option value="3">Partially employed</option>
+                                        <option value="1">Fully employed</option>
+                                        <option value="5">Self Employed</option>
+                                        <option value="0">Entrapreneur</option>
+                                        <option value="4">Retire</option>
+                                        </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="edu6"><b>CreditScoreEsMicroL</b></label><br>
+                                            <select class="form-control" id="edu6" name="edu6" required >
+                                            <option class="hidden"  selected disabled>Select Option</option>
+                                            <option value="0">M</option>
+                                            <option value="1">M1</option>
+                                            <option value="3">M2</option>
+                                            <option value="4">M3</option>
+                                            <option value="5">M4</option>
+                                            <option value="6">M5</option>
+                                            <option value="7">M6</option>
+                                            <option value="8">M7</option>
+                                            <option value="9">M8</option>
+                                            <option value="10">M9</option>
+                                            <option value="2">M10</option>
+
+                                            </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="link5"><b>Interest</b></label> <br>
+                                  <input type="text" class="form-control" placeholder="Enter value in box" id="link5" name="link5"  size="20" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="edu7"><b>Use of loan</b></label><br>
+                                        <select  class="form-control" id="edu7" name="edu7" required >
+                                        <option class="hidden"  selected disabled>Select Option</option>
+                                        <option value="8">Not Set</option>
+                                        <option value="1">Other</option>
+                                        <option value="10">Home improvement </option>
+                                        <option value="14">Vehicle</option>
+                                        <option value="4">Business</option>
+                                        <option value="13">Travel</option>
+                                        <option value="6">Health</option>
+                                        <option value="5">Education</option>
+                                        <option value="12">Real Estate</option>
+                                        <option value="9">Other business</option>
+                                        <option value="0">Accounts receivable financing</option>
+                                        <option value="15">Working capital financing</option>
+                                        <option value="3">Acquisition of stocks </option>
+                                        <option value="2">Acquisition of real estate</option>
+                                        <option value="1">Acquisition of means of transport</option>
+                                        </select>
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="link6"><b>BidsApi</b></label> <br>
+                                    <input type="text" class="form-control" placeholder="Enter value in box"  id="link6" name="link6" size="20" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="edu8"><b>Verifcation Type</b></label><br>
+                                    <select class="form-control" id="edu8" name="edu8" required >
+                                            <option class="hidden"  selected disabled>Select Option</option>
+                                                <option value="3">Not set</option>
+                                                <option value="1">Income unverified</option>
+                                                <option value="4"> Income Un_verified & Cross_reference by phone </option>
+                                                <option value="2">Income Verified</option>
+                                                <option value="0">Income Verified & expense_verified</option>
+                                    
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="edu9"><b>New Credit Customer</b></label><br>
+                                    <select class="form-control" id="edu9" name="edu9" required >
+                                    <option class="hidden"  selected disabled>Select Option</option>
+                                    <option value="1">Credit History Exist</option>
+                                    <option value="0">No credit History</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="link7"><b>Age</b></label> <br>
+                                  <input type="text" class="form-control" placeholder="Enter value in box" id="link7" name="link61"  size="20" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="link8"><b>Refinance Liabilities</b></label> <br>
+                                  <input type="text" class="form-control" placeholder="Enter value in box" id="link8" name="link8"  size="20" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="edu10"><b> Current Employement</b></label><br>
+                                        <select  class="form-control" id="edu10" name="edu10" required >
+                                        <option class="hidden"  selected disabled>Select Option</option>
+                                                <option value="0">More_than_5_year</option>
+                                                <option value="4">upto_1 year</option>
+                                                <option value="8"> UpTo5Years</option>
+                                                <option value="5">UpTo2Years</option>
+                                                <option value="6">UpTo3Years</option>
+                                                <option value="7">Upto 4 year</option>
+                                                <option value="2"> Retire</option>
+                                                <option value="3">UpTo4Years </option>
+                                                <option value="1">Other</option>
+                                                <option value="3">Trial period</option>
+
+                                        </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="edu11"><b>Restructured</b></label><br>
+                                        <select  class="form-control" id="edu11" name="edu11" required >
+                                        <option class="hidden"  selected disabled>Select Option</option>
+                                        <option value="1">Maturating date increased by 60 days</option>
+                                        <option value="0">Maturating date not increased</option>
+                                        </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="edu12"><b>Gender</b></label><br>
+                                            <select class="form-control" id="edu12" name="edu12" required >
+                                            <option class="hidden"  selected disabled>Select Option</option>
+                                            <option value="1">Male</option>
+                                            <option value="0">Female</option>
+                                            <option value="2">Other</option>
+
+                                            </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="edu14"><b>Occupation Area</b></label><br>
+                                        <select  class="form-control" id="edu14" name="edu14" required >
+                                        <option class="hidden"  selected disabled>Select Option</option>
+                                                <option value="12">Not present</option>
+                                                <option value="13">Other</option>
+                                                <option value="17">Retail and wholesale</option>
+                                                <option value="4">Construction</option>
+                                                <option value="14">Processing</option>
+                                                <option value="18">Transport and warehousing</option>
+                                                <option value="8"> Healthcare and social help</option>
+                                                <option value="9">Hospitality and catering  </option>
+                                                <option value="10">Info and telecom</option>
+                                                <option value="3">Civil service & military</option>
+                                                <option value="5">Education</option>
+                                                <option value="7">Finance and insurance</option>
+                                                <option value="1">Agriculture, forestry and fishing </option>
+                                                <option value="0">Administrative</option>
+                                                <option value="6">Energy </option>
+                                                <option value="2">Art and entertainment </option>
+                                                <option value="16">Research </option>
+                                                <option value="15">Real-estate  </option>
+                                                <option value="19">utilities</option>
+                                                <option value="11">Minning</option>
+
+                                        </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="link9"><b>Debt_to_Income</b></label> <br>
+                                  <input type="text" class="form-control" placeholder="Enter value in box" id="link9" name="link9"  size="20" required>
+                                </div>
+                               
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="link10"><b>MonthlyPayment</b></label> <br>
+                                    <input type="text" class="form-control" placeholder="Enter value in box"  id="link10" name="link10" size="20" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="edu15"><b>Martial Status</b></label><br>
+                                    <select class="form-control" id="edu15" name="edu15" required >
+                                            <option class="hidden"  selected disabled>Select Option</option>
+                                                <option value="3">Not Specified</option>
+                                                <option value="4">Single</option>
+                                                <option value="2">Married </option>
+                                                <option value="0">Cohabitant</option>
+                                                <option value="1">Divorced</option>
+                                                <option value="5">Widow</option>
+                                            
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="edu16"><b>Education</b></label><br>
+                                    <select class="form-control" id="edu16" name="edu16" required >
+                                    <option class="hidden"  selected disabled>Select Option</option>
+                                    <option value="4">Secondary education</option>
+                                    <option value="1">Higher education</option>
+                                    <option value="5">Vocational education</option>
+                                    <option value="0">Basic education</option>
+                                    <option value="3">Primary education</option>
+                                    <option value="2">Not Present </option>
+
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="link11"><b>P_EarlyRepaymentsBeforeLoan</b></label> <br>
+                                  <input type="text" class="form-control" placeholder="Enter value in box" id="link11" name="link11"  size="20" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="edu17"><b>Rating</b></label><br>
+                                    <select  class="form-control" id="edu17" name="edu17" required >
+                                    <option class="hidden"  selected disabled>Select Option</option>
+                                    <option value="6">F</option>
+                                    <option value="3">C</option>
+                                    <option value="7">HR</option>
+                                    <option value="5">E</option>
+                                    <option value="4">D</option>
+                                    <option value="0">A</option>
+                                    <option value="2">B</option>
+                                    <option value="1">AA</option>
+                                
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="link12"><b>PrincipalPaymentsMade</b></label> <br>
+                                    <input type="text" class="form-control" placeholder="Enter value in box"  id="link12" name="link12" size="20" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="edu18"><b>Home_Ownership type</b></label><br>
+                                        <select  class="form-control" id="edu18" name="edu18" required >
+                                        <option class="hidden"  selected disabled>Select Option</option>
+                                        <option value="0">Owner</option>
+                                        <option value="9">Tenant,pre-furnished property</option>
+                                        <option value="8">Mortage</option>
+                                        <option value="6">Other</option>
+                                        <option value="2">Joint ownership</option>
+                                        <option value="5">Not specified</option>
+                                        <option value="3">Joint tenant</option>
+                                        <option value="0">Council house</option>
+                                        <option value="7">Owner with encumbrance</option>
+                                        <option value="11">Homeless</option>
+                                        </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="edu19"><b>InterestAndPenaltyPaymentsMade</b></label><br>
+                                            <select class="form-control" id="edu19" name="edu19" required >
+                                            <option class="hidden"  selected disabled>Select Option</option>
+                                            
+                                              <option value="1">Received</option>
+                                              <option value="0">Not Recieved</option>
+                                              
+                                            </select>
+                                              </li>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="link13"><b>ExistingLiabilities</b></label> <br>
+                                  <input type="text" class="form-control" placeholder="Enter value in box" id="link13" name="link13"  size="20" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="link14"><b>IncomeTotal</b></label> <br>
+                                  <input type="text" class="form-control" placeholder="Enter value in box" id="link14" name="link14"  size="20" required>
+                                </div>>
+                               
+                            </div>
+                            
+                                <input  type="submit" class="btn btn-primary btn-lg btn-block" value="Predit">
+                            
+                        </div>
+
+                        
+                    
+                    <form>   
+
+                        <div style="margin-left: auto;margin-right: auto;width: fit-content;text-align: center;">
+                            <h5>{{ prediction_text}}</h5>
+                                  <br>
+
+                            <h5>
+                                      {{ prediction_EMI}}
+				      
+                                     
+			    </h5>
+                                    <br>
+                            <h5>{{ prediction_ROI}}</h5>
+                                  <br>
+                            <h5>{{ prediction_ELA}}</h5>
+			
+			    
+
+                        </div>
+
+                        
+                        
+                        
+
+    </div>
+
+                
+    
+</body>
+</html>
