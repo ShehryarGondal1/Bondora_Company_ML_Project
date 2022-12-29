@@ -310,7 +310,7 @@ __0.87%__  .
 
 The User interface of deployment app is : <br>
 
-![image](Images/deploy.PNG)<br>
+![image](deploy.PNG)<br>
 You can see my notebook. All  the work is explained in detail.
 
 ### AUTHOR
