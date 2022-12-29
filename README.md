@@ -309,12 +309,8 @@ To see the Piplining work ( Refer to notebook). The Final prediction for classif
 __0.87%__  .
 
 The User interface of deployment app is : <br>
+
 ![image](Images/deploy.PNG)<br>
-
-## Deployment
-you can access our app by following this link [stock-price-application-streamlit](https://stock-price-2.herokuapp.com/) or by click [stock-price-application-flask](https://stock-price-flask.herokuapp.com/)
-
-<br>
 You can see my notebook. All  the work is explained in detail.
 
 ### AUTHOR
