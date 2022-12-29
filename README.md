@@ -29,11 +29,11 @@ It has lots of rows and columns, which is 134529 rows spread across 112 columns.
 # Data Cleaning & Pre-processing
 Data Cleaning is an important phase in any data science project, if our data is clean then only we can provide it to our machine learning model. Uncleaned Data can further lead our model with low accuracy. And, If data is incorrect, outcomes and algorithms are unreliable, even though they may look correct. There is no one absolute way to prescribe the exact steps in the data cleaning process because the processes will vary from dataset to dataset. 
 The approach used for identifying and treating missing values & outlier treatment.<br>
-![image](Null_values.PNG)
+![image](Images/Null_values.PNG)
 <br>
 
 __Changing Datatypes__<br>
-![image](Images/changing_datatypes.PNG)
+![image](Images/Changing_datatypes.PNG)
 <br>
 
 __Descriptive Analysis of data__<br>
@@ -42,10 +42,10 @@ __Descriptive Analysis of data__<br>
 To find any missing values in our data set we have used Pandas pre built function __isnull()__ to detect any missing values in our datasets. As we can see that column ReScheluledon has a high number of missing values. So our next step is how to handle a large number of missing values. One approach is, that we will delete the column if we don't need that column for further analysis. And, what if we need that column for further analysis then we have use an approach will is a predefined function in Pandas called fillna().
 
 The Whole missing percent of data in our data is:<br>
-![image](mis_data.PNG)
+![image](Images/miss_data.PNG)
 <br>
 
-![image](Images/mis_data2.PNG)
+![image](Images/miss_data2.PNG)
 <br>
 Removing all the features which have more than 40% missing values:<br>
 # Number of these columns <br>
@@ -55,7 +55,7 @@ len(df.columns[(df.isnull().mean()*100) >= 40])<br>
 df.drop(columns= DropColList, axis= 1, inplace=True)
 <br>
 
-![image](Images/mis_data3.PNG)
+![image](Images/miss_data3.PNG)
 <br>
 
 __Creating Target variable :__
@@ -173,7 +173,7 @@ First, we need to separate the dataset into two parts: features (property attrib
 Then the data needs to be split into 2 sets 
 1.	Training set - This will be the part of the dataset which the model will be using to train itself, the size should be at least 60-70% of the total data we’ve.
 2.	Testing set - To evaluate how the model is performing on the unseen data on which the model will be doing future predictions on, test set is used. It helps to understand how much error is there between actual and predicted values.<br>
-![image](t_test.PNG)<br>
+![image](Images/t_test.PNG)<br>
 
 We implement two models on Classification and thier names are logistics Regression and Random Forest Classification models and their result are as follow: <br>
 ![image](Images/LG.PNG)<br>
@@ -258,6 +258,11 @@ For piplining of both Classification and Regression model . I build __Bondora_Up
 The name of input_ variables are : <br>
 
 <table>
+  <tr>
+    <th>Column One</th>
+    <th>Column Two</th>
+    <th>Column Three</th>
+  </tr>
   <tr>
     <td>Bids portfolio Manager</td>
     <td>Bids Api</td>
