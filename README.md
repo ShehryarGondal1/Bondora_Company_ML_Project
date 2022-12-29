@@ -6,9 +6,9 @@ __Business Problems we are trying to Solve__
 
 ▸	Problems we generally face during buying a Loan like:
 
-•	Here, we are making predictions to whom to grant the loan on the basis of their previous loans and by looking at their previous credit also.
-•	Determining the poor monitoring and control of collateral and fraud people, leaving any losses higher than expected.
-•	We also making conclusion what are the factors affecting the borrower not to repay the loans on time.
+•	Here, we are making predictions to whom to grant the loan on the basis of their previous loans and by looking at their previous credit also.<br>
+•	Determining the poor monitoring and control of collateral and fraud people, leaving any losses higher than expected.<br>
+•	We also making conclusion what are the factors affecting the borrower not to repay the loans on time.<br>
 
 __Main Goal__
 This case study aims to identify patterns which indicate if a client has difficulty paying their installments which may be used for taking actions such as denying the loan, reducing the amount of loan, lending (to risky applicants) at a higher interest rate, etc. This will ensure that the consumers capable of repaying the loan are not rejected. In other words, the company wants to understand the driving factors (or driver variables) behind loan defaulters, i.e. the variables which are strong indicators of default. The company can utilise this knowledge for its portfolio and risk assessment and also help Lender to grant the loan on the basic of EMI ,ROI,ELA.
@@ -189,7 +189,7 @@ Before begining on feature Encoding part , we have create three new variables fo
 ![image](Images/EMI.PNG)<br>
 ![image](Images/Tar3.PNG)<br>
 ![image](Images/ELA.PNG)<br>
-![image](Images/Tar4.PNG)<br>
+![image](Images/tar4.PNG)<br>
 ![image](Images/ROI.PNG)<br>
 
 For Feature Encoding : we select these features : 
@@ -218,6 +218,7 @@ For Feature Encoding : we select these features :
   </tr>
 
 </table>
+<br>
 
 
 * Feature Encoding:<br>
@@ -259,11 +260,6 @@ The name of input_ variables are : <br>
 
 <table>
   <tr>
-    <th>Column One</th>
-    <th>Column Two</th>
-    <th>Column Three</th>
-  </tr>
-  <tr>
     <td>Bids portfolio Manager</td>
     <td>Bids Api</td>
     <td>Bids Manual</td>
@@ -301,8 +297,9 @@ The name of input_ variables are : <br>
   </tr>
 
 </table>
+<br>
 
-The name of Output variables are :
+The name of __Output variables__ are :
 1. Loan Status.
 2. EMI.
 3. ROI.
