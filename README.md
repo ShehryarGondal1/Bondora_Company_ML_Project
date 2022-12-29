@@ -19,7 +19,7 @@ __About Dataset__
 The retrieved data is a pool of both defaulted and non-defaulted loans from the time period between 1st March 2009 and 27th January 2020. The data comprises of demographic and financial information of borrowers, and loan transactions. In P2P lending, loans are typically uncollateralized and lenders seek higher returns as a compensation for the financial risk they take. Such a dataset is very useful for the Banking firms on which different analysis can be done to get insights whether to grant loan or not by looking at their   state/country. 
 
 This is what the dataset looks like : <br>
-![image](Tables.PNG)
+![image](Images/Tables.PNG)
 <br>
 
 It has lots of rows and columns, which is 134529 rows spread across 112 columns. Here is the list of columns this dataset has : <br>
