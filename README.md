@@ -311,9 +311,6 @@ __0.87%__  .
 The User interface of deployment app is : <br>
 
 ![image](deploy.PNG)<br>
-
-## Deployment
-We also create our app by using flask , then deployed it to Ngrok . You can access the app by following this link : [Loan-price_predictor-application-flask](https://4a0a-103-104-214-26.in.ngrok.io )
 <br>
 You can see my notebook. All  the work is explained in detail.
 
